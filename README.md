@@ -2,8 +2,6 @@
 
 ## Project setup instructions
 
----
-
 1. Install `nvm` to manage node versions, Make sure you are using Node.JS `v21.0.0`
 1. Install `pnpm` from [LINK](https://pnpm.io/)
 1. Make sure that your vs-code is using same ts version as the current project
@@ -13,8 +11,6 @@
 
 ## Tasks
 
----
-
 ### 1. **Add a new checkbox column**
 
 -   [ ] Create a new checkbox column as the first column
@@ -23,10 +19,9 @@
 
 **Examples:**
 
--   First column as a checkbox, on selecting the row notice the background of selected row is slightly different from other rows
-    ![First column](./.github/demo-images/task1_1.png)
--   Single select
-    ![Single select](./.github/demo-images/task1_2.gif)
+First column as a checkbox, on selecting the row notice the background of selected row is slightly different from other rows
+![First column](./.github/demo-images/task1_1.png)
+![Single select](./.github/demo-images/task1_2.gif)
 
 ### 2. **Sticky Columns**
 
@@ -34,7 +29,6 @@
 -   [ ] On hovering over the row the entire row's background should be highlighted incluing the sticky columns
 -   [ ] To test this change either use mobile view or decrease the width of the table
 
-**Examples:**
 ![Sticky columns](./.github/demo-images/task2_1.gif)
 
 ### 3. **Resizable Columns**
@@ -42,5 +36,4 @@
 -   [ ] Create resizable columns, i.e. the width of columns should increase or decrease depending on users interaction
 -   [ ] If the content is too big to fit in a column, the content should not overflow out of the column i.e. overflow-hidden should be enforced
 
-**Examples:**
 ![Resizable columns](./.github/demo-images/task3_1.gif)
