@@ -1,5 +1,12 @@
 # Vidyayatan Infotech : Frontend Hiring Assignment
 
+## How to sumbit the Assignment : [LINK](https://docs.google.com/forms/d/e/1FAIpQLSd-2gS4piDlG4IvAhW-e0494Z4oNiw04xoiTFZ9VOxf-QtVKQ/viewform)
+
+-   Fork this repository
+-   Solve the tasks and commit the changes in your forked repository (**DO NOT** open a PR on this repository)
+-   Deploy the changes to your preferred vendor (we recommend [Render](https://render.com/), [Vercel](https://vercel.com/) and [netlify](https://www.netlify.com/))
+-   Submit the assignment using [this google form](https://docs.google.com/forms/d/e/1FAIpQLSd-2gS4piDlG4IvAhW-e0494Z4oNiw04xoiTFZ9VOxf-QtVKQ/viewform)
+
 ## Project setup instructions
 
 1. Install `nvm` to manage node versions, Make sure you are using Node.JS `v21.0.0`
@@ -8,13 +15,6 @@
 1. Run `pnpm install` to install dependencies
 1. Run `pnpm run dev` to start dev server
 1. Run `pnpm run precommit` to check if your code passess ts checks and linter checks
-
-## How to sumbit the Assignment
-
--   Fork this repository
--   Solve the tasks and commit the changes in your repository (**DO NOT** open a PR on this repository)
--   Deploy the changes to your preferred vendor (we recommend [Render](https://render.com/), [Vercel](https://vercel.com/) or [netlify](https://www.netlify.com/))
--   Submit the assignment using [this google form](https://docs.google.com/forms/d/e/1FAIpQLSd-2gS4piDlG4IvAhW-e0494Z4oNiw04xoiTFZ9VOxf-QtVKQ/viewform)
 
 ## Assignment Tasks
 
