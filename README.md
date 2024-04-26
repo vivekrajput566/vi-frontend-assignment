@@ -16,6 +16,13 @@
 1. Run `pnpm run dev` to start the dev server
 1. Run `pnpm run precommit` to check if your code passes ts checks and linter checks
 
+## Additional Information
+
+-   The project uses [ShadCN](https://ui.shadcn.com/) as the UI library
+-   The project uses [TanstackTable](https://tanstack.com/table/latest) for managing tables
+-   Additional resources : [Tailwind](https://tailwindcss.com/)
+-   Sample Tool used for task 2 and 3 : [DBeaver](https://dbeaver.io/)
+
 ## Assignment Tasks
 
 ### 1. **Add a new checkbox column**
