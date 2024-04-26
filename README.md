@@ -7,9 +7,16 @@
 1. Make sure that your vs-code is using same ts version as the current project
 1. Run `pnpm install` to install dependencies
 1. Run `pnpm run dev` to start dev server
-1. Run `pnpm run precommit` to check if your code passes ts checks and linter checks
+1. Run `pnpm run precommit` to check if your code passess ts checks and linter checks
 
-## Tasks
+## How to sumbit the Assignment
+
+-   Fork this repository
+-   Solve the tasks and commit the changes in your repository (**DO NOT** open a PR on this repository)
+-   Deploy the changes to your preferred vendor (we recommend [Render](https://render.com/), [Vercel](https://vercel.com/) or [netlify](https://www.netlify.com/))
+-   Submit the assignment using [this google form](https://docs.google.com/forms/d/e/1FAIpQLSd-2gS4piDlG4IvAhW-e0494Z4oNiw04xoiTFZ9VOxf-QtVKQ/viewform)
+
+## Assignment Tasks
 
 ### 1. **Add a new checkbox column**
 
@@ -19,22 +26,21 @@
 
 **Examples:**
 
-The first column is a checkbox, on selecting the row notice the background of the selected row is slightly different from the other rows
-<br />
+First column as a checkbox, on selecting the row notice the background of selected row is slightly different from other rows
 ![First column](./.github/demo-images/task1_1.png)
 ![Single select](./.github/demo-images/task1_2.gif)
 
 ### 2. **Sticky Columns**
 
--   [ ] Create the first 2 columns as sticky columns
--   [ ] On hovering over the row the entire row's background should be highlighted including the sticky columns
+-   [ ] Create first 2 columns as sticky columns
+-   [ ] On hovering over the row the entire row's background should be highlighted incluing the sticky columns
 -   [ ] To test this change either use mobile view or decrease the width of the table
 
 ![Sticky columns](./.github/demo-images/task2_1.gif)
 
 ### 3. **Resizable Columns**
 
--   [ ] Create resizable columns, i.e. the width of columns should increase or decrease depending on user interaction
+-   [ ] Create resizable columns, i.e. the width of columns should increase or decrease depending on users interaction
 -   [ ] If the content is too big to fit in a column, the content should not overflow out of the column i.e. overflow-hidden should be enforced
 
 ![Resizable columns](./.github/demo-images/task3_1.gif)
