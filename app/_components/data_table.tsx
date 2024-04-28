@@ -1,3 +1,4 @@
+"use client"
 import React, { useRef, useEffect, useState } from "react";
 import './index.css'
 
@@ -61,72 +62,62 @@ export function DataTable<TData, TValue>({
     
     <div className="space-y-4 " style={{ direction: table.options.columnResizeDirection }}>
       <div className="rounded-md overflow-x-auto overflow-y-hidden">
-        <Table  {...{
-              style: {
-                width: "100%",
-              },
-            }}>
+      <Table style={{ width: "100%" }}>
+
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow className="tr" key={headerGroup.id}>
-                {headerGroup.headers.map((header, index) => (
+              {headerGroup.headers.map((header, index) => (
                   <TableCell 
-                    
-                    {...{
-                        key: header.id,
-                        colSpan: header.colSpan,
-                        style: {
-                          
+                      key={header.id}
+                      colSpan={header.colSpan}
+                      style={{
                           width: header.getSize() === Number.MAX_SAFE_INTEGER ? "auto" : header.getSize(),
-                          
-                        },
                       }}
-                    ref={index === 0 ? firstColumnRef : null}
-                    
-                    className={
-                        index === 0
-                        ? "sticky left-0 z-20 font-bold bg-white "
-                        : index === 1
-                        ? "second-column sticky z-20 whitespace-nowrap overflow-hidden font-bold text-center bg-white "
-                        : "relative th bg-white whitespace-nowrap overflow-hidden"
-                    }
+                      ref={index === 0 ? firstColumnRef : null}
+                      className={
+                          index === 0
+                          ? "sticky left-0 z-20 font-bold bg-white "
+                          : index === 1
+                          ? "second-column sticky z-20 whitespace-nowrap overflow-hidden font-bold text-center bg-white "
+                          : "relative th bg-white whitespace-nowrap overflow-hidden"
+                      }
                   >
-                    {header.isPlaceholder
-                      ? null
-                      : flexRender(
-                          header.column.columnDef.header,
-                          header.getContext()
-                        )}
-
-                        <div
-                        {...{
-                          onDoubleClick: () => header.column.resetSize(),
-                          onMouseDown: header.getResizeHandler(),
-                          onTouchStart: header.getResizeHandler(),
-                          className: `resizer ${
-                            table.options.columnResizeDirection
+                      {header.isPlaceholder
+                          ? null
+                          : flexRender(
+                              header.column.columnDef.header,
+                              header.getContext()
+                          )}
+          
+                      <div
+                          onDoubleClick={() => header.column.resetSize()}
+                          onMouseDown={header.getResizeHandler()}
+                          onTouchStart={header.getResizeHandler()}
+                          className={`resizer ${
+                              table.options.columnResizeDirection
                           } ${
-                            header.column.getIsResizing() ? 'isResizing' : ''
-                          }`,
-                          style: {
-                            transform:
+                              header.column.getIsResizing() ? 'isResizing' : ''
+                          }`}
+                          style={{
+                              transform:
                               columnResizeMode === 'onEnd' &&
                               header.column.getIsResizing()
-                                ? `translateX(${
-                                    (table.options.columnResizeDirection ===
-                                    'rtl'
-                                      ? -1
-                                      : 1) *
-                                    (table.getState().columnSizingInfo
-                                      .deltaOffset ?? 0)
+                                  ? `translateX(${
+                                      (table.options.columnResizeDirection ===
+                                      'rtl'
+                                          ? -1
+                                          : 1) *
+                                      (table.getState().columnSizingInfo
+                                          .deltaOffset ?? 0)
                                   }px)`
-                                : '',
-                          },
-                        }}
+                                  : '',
+                          }}
                       />
                   </TableCell>
-                ))}
-              </TableRow>
+              ))}
+          </TableRow>
+          
             ))}
           </TableHeader>
           <TableBody>
