@@ -4,12 +4,57 @@ import { Badge } from "@/components/ui/badge";
 import { type ColumnDef } from "@tanstack/react-table";
 import { labels, priorities, statuses } from "../_constants/metadata";
 import { type Task } from "../_constants/schema";
+import { Checkbox } from "@/components/ui/checkbox";
+
+
+
+let selectedRowId: any = null;
 
 export const columns: Array<ColumnDef<Task>> = [
+  {
+    id: 'select',
+    header: ({ table }) => (
+      <Checkbox
+        checked={table.getIsAllPageRowsSelected()}
+        onCheckedChange={(value) => table.toggleAllPageRowsSelected(false)}
+      />
+    ),
+    cell: ({ row}) => {
+        
+
+        const handleCheckboxChange = (value:any,row:any) => {
+            if (value) {
+                //console.log(row)
+                if (selectedRowId !== null) { 
+                  const prevSelectedRow = selectedRowId;
+                  prevSelectedRow.toggleSelected(false);
+                }
+                selectedRowId=row;
+              }
+              else{
+                selectedRowId=null;
+              }
+             
+              row.toggleSelected(!!value);
+        };
+
+      return (
+        <Checkbox
+          checked={row.getIsSelected()}
+          onCheckedChange={(value) => handleCheckboxChange(value,row)}
+        />
+      );
+    },
+    enableSorting: false,
+    enableHiding: false,
+    size:50,
+  },
+
     {
         accessorKey: "id",
         header: ({ column }) => <span>Task</span>,
         cell: ({ row }) => <div className="w-[80px]">{row.getValue("id")}</div>,
+        size:100,
     },
     {
         accessorKey: "title",
@@ -18,14 +63,16 @@ export const columns: Array<ColumnDef<Task>> = [
             const label = labels.find((label) => label.value === row.original.label);
 
             return (
-                <div className="flex space-x-2">
+                <div className="flex w-auto space-x-2 ">
                     {label && <Badge variant="outline">{label.label}</Badge>}
-                    <span className="max-w-[400px] truncate font-medium">
+                    <span className=" truncate font-medium">
                         {row.getValue("title")}
                     </span>
                 </div>
             );
         },
+        size:300,
+        
     },
     {
         accessorKey: "status",
@@ -44,6 +91,7 @@ export const columns: Array<ColumnDef<Task>> = [
                 </div>
             );
         },
+        size:200,
     },
     {
         accessorKey: "priority",
